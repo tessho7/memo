@@ -1,9 +1,13 @@
+## なにこれ？
+たまにテーブル使ってるページで、ソートしたいなーとか思うことがあるので作った。  
+
 ## 使用ライブラリ
 - [jQuery](http://jquery.com/)
 - [tablesorter](http://tablesorter.com/docs/)
 
 ## 注意点
 - jquery.tablesorter.min.jsとcss/style.cssは、ご自身のサーバに置いて使用してください。
+- theadとtbodyタグが無いと動かないと思う。(つまりあんまり試してない)
 
 ## 登録用
 ```javascript
