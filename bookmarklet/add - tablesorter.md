@@ -1,8 +1,9 @@
-このbookmarkletは、jQueryが必要です。
-
 ## 使用ライブラリ
 - [jQuery](http://jquery.com/)
 - [tablesorter](http://tablesorter.com/docs/)
+
+## 注意点
+- jquery.tablesorter.min.jsとcss/style.cssは、ご自身のサーバに置いて使用してください。
 
 ## 登録用
 ```javascript
