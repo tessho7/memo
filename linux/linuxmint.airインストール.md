@@ -1,22 +1,22 @@
-## LinuxMint15 64bit‚ÅAadobe airƒCƒ“ƒXƒg[ƒ‹‚µ‚Ä‚İ‚½
+## LinuxMint15 64bitã§ã€adobe airã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«ã—ã¦ã¿ãŸ
 
-### ƒ_ƒEƒ“ƒ[ƒh
+### ãƒ€ã‚¦ãƒ³ãƒ­ãƒ¼ãƒ‰
 ```sh
 $ wget http://airdownload.adobe.com/air/lin/download/latest/AdobeAIRInstaller.bin
 ```
 
-### ‘«‚è‚È‚¢‚à‚ÌƒCƒ“ƒXƒg[ƒ‹
+### è¶³ã‚Šãªã„ã‚‚ã®ã‚¤ãƒ³ã‚¹ãƒˆãƒ¼ãƒ«
 ```sh
 $ sudo aptitude install ia32-libs
 ```
 
-### 64bit‚Ìê‡AƒpƒXİ’è
+### 64bitã®å ´åˆã€ãƒ‘ã‚¹è¨­å®š
 ```sh
 $ sudo ln -s /usr/lib/i386-linux-gnu/libgnome-keyring.so.0 /usr/lib/libgnome-keyring.so.0
 $ sudo ln -s /usr/lib/i386-linux-gnu/libgnome-keyring.so.0.2.0 /usr/lib/libgnome-keyring.so.0.2.0
 ```
 
-### Às
+### å®Ÿè¡Œ
 ```sh
 $ chmod +x AdobeAIRInstaller.bin
 $ ./AdobeAIRInstaller.bin
