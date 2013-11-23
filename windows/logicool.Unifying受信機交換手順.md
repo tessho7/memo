@@ -1,19 +1,19 @@
-# Unifying��M�@�����菇
+# Unifying受信機交換手順
 
-## ��肽������
-- Unifying��M�@��ʂ̂��̂Ɍ���������
+## やりたいこと
+- Unifying受信機を別のものに交換したい
 
-## �K�v�Ȃ���
-- Unifying�ڑ��ł͂Ȃ��A�ʂ̃L�[�{�[�h�܂��̓}�E�X
+## 必要なもの
+- Unifying接続ではない、別のキーボードまたはマウス
 
-## �菇
-1. SetPoint �̐ݒ���J��
-2. ��̃c�[���^�u���J��
-3. ����Unifying�^�u���J��
-4. �uUnifying �\�t�g�E�F�A���J���v�{�^������
-5. �u���ցv����
-6. �u�V���ɐڑ�����f�o�C�X�̓d����ON�ɂ��Ă��������v�ƕ\�����ꂽ��AUnifying��M�@��USB����O��
-7. �u�R���s���[�^�� Unifying ��M�@���ڑ�����Ă��܂���v�ƕ\�����ꂽ��A�V����Unifying��M�@��ڑ�����
-8. ���΂炭�҂�(�P���ȓ�)�ƁA�u���ցv�{�^����������l�ɂȂ�̂ŁA�u���ցv������
-9. ���܂Őڑ����Ă����@��̍ĔF����ʂɂȂ�̂ŁA�ē��ɏ]���ĔF�����s��
-��8�ȍ~�A�ĔF���܂ł́A�u�K�v�Ȃ��́v�ŗp�ӂ����@��ő���
+## 手順
+1. SetPoint の設定を開く
+2. 上のツールタブを開く
+3. 左のUnifyingタブを開く
+4. 「Unifying ソフトウェアを開く」ボタン押下
+5. 「次へ」押下
+6. 「新たに接続するデバイスの電源をONにしてください」と表示されたら、Unifying受信機をUSBから外す
+7. 「コンピュータに Unifying 受信機が接続されていません」と表示されたら、新しいUnifying受信機を接続する
+8. しばらく待つ(１分以内)と、「次へ」ボタンが押せる様になるので、「次へ」を押下
+9. 今まで接続していた機器の再認識画面になるので、案内に従い再認識を行う
+※8以降、再認識までは、「必要なもの」で用意した機器で操作
