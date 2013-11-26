@@ -35,3 +35,16 @@ rsync等、コピーも失敗する
 10. sambaをマウント
 
 これで、WindowsからもUbuntuからも文字化けせずアクセスできるようになりました。
+
+## 補足
+iconv忘れてました。  
+rsyncについては、samba使わず、以下でもOK  
+From 玄箱で使っていたHDD
+### To windows
+```bash
+rsync -avzu --iconv=CP932,CP932 [from] [to]
+```
+###To linux
+```bash
+rsync -avzu --iconv=CP932,UTF-8 [from] [to]
+```
