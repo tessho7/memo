@@ -48,3 +48,13 @@ rsync -avzu --iconv=CP932,CP932 [from] [to]
 ```bash
 rsync -avzu --iconv=CP932,UTF-8 [from] [to]
 ```
+
+## 補足２
+NT系のwindowsの場合は、linuxと同じ形式で大丈夫らしい。  
+[TO]がwindows7の場合は大丈夫でした。
+```bash
+rsync -avzu --iconv=CP932,UTF-8 [from] [to]
+```
+
+ただ、今回の場合、同じHDD内に、CP932とUTF-8のファイル名が混在していた為、  
+結局、rsyncではなく、WinMerge等のWindows用ソフトで整合性取りました。
