@@ -12,9 +12,9 @@ windowsだとサーバ立てるのが面倒なので。。。
 
 ### 使い方
 ```bash
-$ node /path/to/app.js　[ドキュメントルートパス(最後/なし)]
+$ node /path/to/app.js [ドキュメントルートパス(最後/なし)]
 ```
 
-- cygwinの場合、「D:\path\to\ドキュメントルート」は「D:/path/to/ドキュメントルート」とする
+- cygwinの場合、`D:\path\to\ドキュメントルート`は`D:/path/to/ドキュメントルート`とする
 - /cygdrive/で動く環境ならそのままでOK
 - mime types は、mimeTypes.jsonに書いてあるので適宜追加
