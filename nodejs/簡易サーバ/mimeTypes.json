@@ -1,0 +1,15 @@
+{
+	".json"	: "application/json",
+	".map"	: "application/json",
+	".txt"	: "text/plain",
+	".htm"	: "text/html",
+	".html"	: "text/html",
+	".xml"	: "text/xml",
+	".js"	: "text/javascript",
+	".vbs"	: "text/vbscript",
+	".css"	: "text/css",
+	".gif"	: "image/gif",
+	".jpg" 	: "image/jpeg",
+	".jpeg"	: "image/jpeg",
+	".png"	: "image/png"
+}
