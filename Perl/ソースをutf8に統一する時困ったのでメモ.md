@@ -1,20 +1,20 @@
 ### ソースをutf8に統一する時困ったのでメモ
 
-- 各ソースや関連ファイル、DBをutf8へ変換
+#### 各ソースや関連ファイル、DBをutf8へ変換
 
-- 各ソースに以下を追記しデコード
+#### 各ソースに以下を追記しデコード
 ```perl
 use utf8;
 ```
 
-- 出力系処理時に、Encode.pmを使用しエンコード
+#### 出力系処理時に、Encode.pmを使用しエンコード
 ```perl
 use Encode qw/encode_utf8/;
 ：
 print encode_utf8( [出力内容] );
 ```
 
-- ファイル読込時、デコード
+#### ファイル読込時、デコード
 ```perl
 use open 'utf8';
 ：
@@ -25,7 +25,7 @@ if( open(IN, "[ファイルパス]") ){
 }
 ```
 
-- CGI.pmを使用したパラメータの受け取り時デコード
+#### CGI.pmを使用したパラメータの受け取り時デコード
 ```perl
 use Encode qw/decode_utf8/;
 use CGI;
@@ -36,7 +36,7 @@ for my $prm( $q->param ){
 }
 ```
 
-- mysql接続時、utf8デコードをデフォルトにする
+#### mysql接続時、utf8デコードをデフォルトにする
 ```perl
 my $attr = {
 	mysql_enable_utf8 => 1,
