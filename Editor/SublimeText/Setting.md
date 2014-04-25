@@ -48,3 +48,15 @@
 	"wrap_width"					: 0
 }
 ```
+
+## sublime-keymap(キーバインド標準)
+- タブを押した際、タブではなく補完が動いてしまう為、無効化
+```json
+//	{ "keys": ["tab"], "command": "insert_best_completion", "args": {"default": "\t", "exact": true} },
+//	{ "keys": ["tab"], "command": "insert_best_completion", "args": {"default": "\t", "exact": false},
+//		"context":
+//		[
+//			{ "key": "setting.tab_completion", "operator": "equal", "operand": true }
+//		]
+//	},
+```
