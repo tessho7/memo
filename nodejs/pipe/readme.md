@@ -1,6 +1,6 @@
 ### nodejsなんだからpipeを使おう？
 
-streamはステキだけど、chunkの扱いは面倒(自分だけ？) 
+streamはステキだけど、chunkの扱いは面倒(自分だけ？)  
 でも、pipeってステキなメソッドがあるのです
 
 ### pipeCopy.jsは覚書
