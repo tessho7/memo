@@ -14,3 +14,13 @@ rpm -ivh http://ftp.riken.jp/Linux/fedora/epel/6/x86_64/epel-release-6-8.noarch.
 ```bash
 yum install nodejs npm
 ```
+
+### Ubuntu14.04
+```bash
+sudo apt-get install nodejs npm
+```
+上記だと、`node`では無く`nodejs`でインストールされるので
+```bash
+sudo apt-get install nodejs nodejs-legacy npm
+```
+`nodejs-legacy`を入れ、シンボリック作成(`/usr/bin/node -> nodejs`)
