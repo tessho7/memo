@@ -19,3 +19,13 @@ MemTrimRate = "0"
 ```sh
 isolation.tools.hgfs.notify.enable = "FALSE"
 ```
+
+## CPUを複数使う場合以下を有効にする
+
+### Intel - Intel XD Bit / Intel-VT
+- Advanced > CPU Configuration >  Execute Disable Bit > [Enabled]   
+- Advanced > CPU Configuration >  Intel(R) VirtualizationTechnology > [Enabled]
+
+### AMD - AMD-V (AMD SVM)
+- Advanced > CPU Configuration > SVM > [Enabled]
+- Secure Virtual Machineかも
