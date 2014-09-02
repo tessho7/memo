@@ -14,3 +14,8 @@ bios.bootDelay = "3000"
 mainMem.useNamedFile = "FALSE"
 MemTrimRate = "0"
 ```
+
+- 最近のVMwarePlayerはvmware-vmx.exeのCPU使用率が高いので
+```sh
+isolation.tools.hgfs.notify.enable = "FALSE"
+```
