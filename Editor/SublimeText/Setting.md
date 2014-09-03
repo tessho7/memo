@@ -25,27 +25,38 @@
 メニューが日本語になる  
 全てではないけど、やっぱり日本語の方が見つけやすい
 
+- ColorSchemeSelector
+> 色々カラースキーマカラースキーマを試したいときに重宝  
+
+- LineEndings
+> 改行コード確認の手間が減る
+
+- OmniMarkupPreviewer
+> markdownを書いている時リアルタイムに変換、ブラウザに表示してくれる
+
+
+
 ## 私の設定 ##
 ```json
 {
-	"auto_complete_commit_on_tab"	: true,
-	"color_scheme"					: "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
-	"default_line_ending"			: "unix",
-	"draw_white_space"				: "all",
-	"flatland_square_tabs"			: true,
-	"font_face"						: "TakaoGothic",
-	"font_size"						: 10.0,
-	"highlight_line"				: true,
-	"highlight_modified_tabs"		: false,
-	"ignored_packages"				: [
+	"color_scheme": "Packages/Solarized Color Scheme/Solarized (dark).tmTheme",
+	"default_line_ending": "unix",
+	"draw_white_space": "all",
+	"flatland_square_tabs": true,
+	"font_face": "Takaoゴシック",
+	"font_size": 10,
+	"highlight_line": true,
+	"highlight_modified_tabs": false,
+	"ignored_packages":
+	[
 		"Vintage"
 	],
-	"indent_subsequent_lines"		: true,
-	"tab_completion"				: false,
-	"theme"							: "Flatland Dark.sublime-theme",
-	"trim_automatic_white_space"	: false,
-	"word_wrap"						: false,
-	"wrap_width"					: 0
+	"indent_subsequent_lines": true,
+	"tab_completion": false,
+	"theme": "Flatland Dark.sublime-theme",
+	"trim_automatic_white_space": false,
+	"word_wrap": false,
+	"wrap_width": 0
 }
 ```
 
