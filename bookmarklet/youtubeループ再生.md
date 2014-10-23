@@ -27,7 +27,7 @@ if( location.hostname === 'www.youtube.com' ){
         }
     }, 100 );
 }else{
-    console.log('not arrow')
+    console.log('not allow')
 }
 ```
 
