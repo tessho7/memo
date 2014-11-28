@@ -39,7 +39,7 @@
 - OmniMarkupPreviewer
 > markdownを書いている時リアルタイムに変換、ブラウザに表示してくれる
 
--ConvertToUTF8
+- ConvertToUTF8
 >
 Shift_JISを扱う場合があったので入れた  
 自動判別で、読込時UTF8へ変換し、保存時元のエンコードで出力してくれる  
