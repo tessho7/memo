@@ -15,7 +15,7 @@
 - Theme - FlatLand
 > このテーマがすき
 
-- Solalized Color Scheme
+- Solarized Color Scheme
 >
 これは有名。色合いが好き  
 ちなみに標準でも入っているけど、そちらとは少々違う
@@ -25,15 +25,26 @@
 メニューが日本語になる  
 全てではないけど、やっぱり日本語の方が見つけやすい
 
+>- 日本語化手順
+```text
+1. Package Controlをインストール
+2. Package Controlで「japanize」をインストール
+3. sublime text3の「Data\Packages」フォルダ配下に「Default」フォルダを作成
+4. 「Data\Packages\Japanaze\*.jp」を3のフォルダへコピーし、ファイル名から「.jp」を消す
+```
+
 - ColorSchemeSelector
 > 色々カラースキーマカラースキーマを試したいときに重宝  
-
-- LineEndings
-> 改行コード確認の手間が減る
 
 - OmniMarkupPreviewer
 > markdownを書いている時リアルタイムに変換、ブラウザに表示してくれる
 
+-ConvertToUTF8
+>
+Shift_JISを扱う場合があったので入れた  
+自動判別で、読込時UTF8へ変換し、保存時元のエンコードで出力してくれる  
+たまに間違う  
+保存の際ラグがあり、即アップロードなど行うと変換が間に合っていないことがあるのでのんびりと
 
 
 ## 私の設定 ##
@@ -43,8 +54,8 @@
 	"default_line_ending": "unix",
 	"draw_white_space": "all",
 	"flatland_square_tabs": true,
-	"font_face": "Takaoゴシック",
-	"font_size": 10,
+	"font_face": "Ricty",
+	"font_size": 8,
 	"highlight_line": true,
 	"highlight_modified_tabs": false,
 	"ignored_packages":
@@ -52,6 +63,7 @@
 		"Vintage"
 	],
 	"indent_subsequent_lines": true,
+	"show_encoding": true,
 	"tab_completion": false,
 	"theme": "Flatland Dark.sublime-theme",
 	"trim_automatic_white_space": false,
