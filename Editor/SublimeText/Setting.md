@@ -25,13 +25,12 @@
 メニューが日本語になる  
 全てではないけど、やっぱり日本語の方が見つけやすい
 
->- 日本語化手順
-```text
-1. Package Controlをインストール
-2. Package Controlで「japanize」をインストール
-3. sublime text3の「Data\Packages」フォルダ配下に「Default」フォルダを作成
-4. 「Data\Packages\Japanaze\*.jp」を3のフォルダへコピーし、ファイル名から「.jp」を消す
-```
+	- 日本語化手順
+
+		1. Package Controlをインストール
+		2. Package Controlで「japanize」をインストール
+		3. sublime text3の「Data\Packages」フォルダ配下に「Default」フォルダを作成
+		4. 「Data\Packages\Japanaze\*.jp」を3のフォルダへコピーし、ファイル名から「.jp」を消す
 
 - ColorSchemeSelector
 > 色々カラースキーマカラースキーマを試したいときに重宝  
@@ -83,3 +82,14 @@ Shift_JISを扱う場合があったので入れた
 //		]
 //	},
 ```
+- SublimeText3の場合keymapファイルの修正が行えないため、以下手順で追加
+
+	1. メニューの「Preferences ＞ Key Bindings - Default」を開き内容をコピーしておく
+	2. SublimeText終了
+	3. Packages\Default(Portable:Data\Package\Default)フォルダがなければ作成
+	4. 以下ファイル作成
+		- Windows:Default (Windows).sublime-keymap
+		- Mac:Default (OSX).sublime-keymap
+		- Linux:調べてない
+	5. 1の内容を貼り付け、保存すると元通り
+	6. 後は、4で作成したファイルを編集
