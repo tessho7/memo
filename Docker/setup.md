@@ -103,7 +103,13 @@ $ sudo docker rmi REPOGITORY:TAG
 $ docker run -it ubuntu:latest /bin/bash
 ```
 
-## まだ途中だけど
-ここまで見たけど、デーモンで動かすときポートのバインドができないので終了  
-その内またやる
+### コンテナのログをホスト側へ
+nginxのログを`/tmp/docker_container`フォルダへ
+```bash
+$ docker run --name 好きな名前 -d -p 80:80 -v /tmp/docker_container:/var/log/nginx tessho7/nginx_on_ubuntu
+```
 
+## 注意
+### ポートのバインドができない
+何故か使用していないポートのバインドができない場合、dockerを再起動すると良いらしい  
+ひとまずサーバ再起動したらバインドできるようになった
