@@ -2,3 +2,8 @@
 ```sh
 # vmware-user
 ```
+
+## カーネルアップデートなどの後は
+```bash
+$ sudo vmware-config-tools.pl
+```
