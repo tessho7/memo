@@ -1,7 +1,7 @@
 ### IPアドレス固定化
 
 #### 試した環境は、VMwarePlayer on Windows7
-```
+```diff
  #cloud-config
  
 +write_files:
@@ -20,3 +20,29 @@
 ```
 
 で、再起動を２回したら反映された
+
+### コンテナ自動起動
+
+#### CoreOS再起動時にコンテナが起動するように設定
+```diff
+ #cloud-config
+ 
++coreos:
++  units:
++    - name: NAMES.service
++      command: start
++      content: |
++        [Unit]
++        Description=CentOS Container
++        Ahther=tessho7
++        After=docker.service
++        
++        [Service]
++        Restart=always
++        ExecStart=/usr/bin/docker start -a NAMES
++        ExecStop=/usr/bin/docker stop -t 2 NAMES
++
+ write_files:
+   - path: /etc/systemd/network/10-host-only.network
+     content: |
+```
