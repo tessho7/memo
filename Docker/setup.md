@@ -118,9 +118,13 @@ $ docker rm `docker ps -a -q`
 
 ### イメージ<none>をまとめて削除
 ```bash
-docker rmi $(docker images | awk '/^<none>/ { print $3 }')
+$ docker rmi $(docker images | awk '/^<none>/ { print $3 }')
 ```
 
+### コンテナからデータコピー
+```bash
+$ docker cp ddd629e6073f:/hoge/foo .
+```
 
 ## 注意
 ### ポートのバインドができない
