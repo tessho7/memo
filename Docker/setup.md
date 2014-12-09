@@ -126,6 +126,20 @@ $ docker rmi $(docker images | awk '/^<none>/ { print $3 }')
 $ docker cp ddd629e6073f:/hoge/foo .
 ```
 
+### イメージを移行
+- エクスポート
+```bash
+$ docker export [IMAGE ID] > img.tar
+```
+- img.tarを別のサーバへコピー
+- インポート
+```bash
+$ cat img.tar | docker import - REPOSITORY:TAG
+```
+
+
+
+
 ## 注意
 ### ポートのバインドができない
 何故か使用していないポートのバインドができない場合、dockerを再起動すると良いらしい  
