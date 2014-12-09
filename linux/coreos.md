@@ -1,3 +1,6 @@
+### 編集するファイル
+/usr/share/oem/cloud-config.yml
+
 ### IPアドレス固定化
 
 #### 試した環境は、VMwarePlayer on Windows7
