@@ -111,6 +111,17 @@ nginxのログを`/tmp/docker_container`フォルダへ
 $ docker run --name 好きな名前 -d -p 80:80 -v /tmp/docker_container:/var/log/nginx tessho7/nginx_on_ubuntu
 ```
 
+### コンテナをまとめて削除
+```bash
+$ docker rm `docker ps -a -q`
+```
+
+### イメージ<none>をまとめて削除
+```bash
+docker rmi $(docker images | awk '/^<none>/ { print $3 }')
+```
+
+
 ## 注意
 ### ポートのバインドができない
 何故か使用していないポートのバインドができない場合、dockerを再起動すると良いらしい  
