@@ -1,5 +1,7 @@
 ### 同一ホスト内でのリンク
 
+--link使うと、/etc/hostsに追記されるんだね。
+
 #### コンテナ通しのリンク
 ```bash
 $ docker run --name test01 -e TEST_ABABA=ababa -itd centos bash
@@ -19,6 +21,12 @@ ALIAS_ENV_TEST_ABABA=ababa
 $ docker run --rm --name test02 --link test01:alias centos bash -c "cat /etc/hosts" | grep alias
 リンク元(test01)のIPアドレス     alias
 ```
+
+#### 他の方法としてはtest01のポートをホストにバインドしておく
+```bash
+$ docker run --name test01 -p 80:80 -e TEST_ABABA=ababa -itd centos bash
+```
+この場合、ホストのIPの80番ポートへアクセスすれば良い
 
 #### 現在の知識では
 - sshログインした場合、環境変数にセットされていないので、どのユーザ(tty)に対してのlinkなのか不明
