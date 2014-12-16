@@ -13,7 +13,7 @@ ALIAS_ENV_TEST_ABABA=ababa
 環境変数の確認ができた  
 
 でも、perlから%ENVで取得できなかった。  
-なので、/etc/hostsに追記されているものを使用。  
+今回はリンク元のIPアドレスだけ分かれば良かったので、/etc/hostsに追記されているものを使用。  
 以下で確認できる
 ```bash
 $ docker run --rm --name test02 --link test01:alias centos bash -c "cat /etc/hosts" | grep alias
