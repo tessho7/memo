@@ -2,7 +2,7 @@
 
 --link使うと、/etc/hostsに追記されるんだね。
 
-#### コンテナ通しのリンク
+#### コンテナ間のリンク
 ```bash
 $ docker run --name test01 -e TEST_ABABA=ababa -itd centos bash
 ```
