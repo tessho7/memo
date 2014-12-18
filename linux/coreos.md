@@ -1,3 +1,12 @@
+### 最初のログイン
+sshログインしかできないので、シングルユーザモードと言うか、自動ログインしてよしなに。
+1. ブート編集(CTRL+e)
+2. $Linuxの行の最後に`coreos.autologin=tty1`を追記
+3. 起動(CTRL+x)
+
+英語キーボードなので注意
+- `:`は、`SHIFT+;`
+
 ### 編集するファイル
 /usr/share/oem/cloud-config.yml
 
