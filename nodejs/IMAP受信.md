@@ -11,8 +11,19 @@ var imap = inbox.createConnection( 993, 'imap.gmail.com', {
         pass: 'パスワード'
     }
 } );
-imap
-    .on( 'new', function( message ){
+imap.on('connect', function(){
+    console.log('connected');
+    imap.openMailbox('INBOX', function(error){
+        if(error) throw error;
+        
+        // リスト取得
+        imap.listMessages(-10, function(err, messages){
+            messages.forEach(function(message){
+                console.log(message.UID + ": " + message.title);
+            });
+        });
+    });
+    imap.on('new', function(message){
         var data = {
             uid     : message.UID,
             date    : message.date,
@@ -21,10 +32,14 @@ imap
             title   : message.title,
             body    : ''
         };
-        // エンコード設定
+        console.log('[message]-------------------------------------');
+        console.log( message );
+        
+        // charset設定(エラー処理は適宜追加の必要あり)
         var conv = new iconv.Iconv( message.bodystructure.parameters.charset, 'UTF-8');
+        
         // body取得
-        var tmp_chunk = '';
+        var tmp_chunk = null;
         imap.createMessageStream( message.UID )
             .on('data', function( chunk ){
                 if( tmp_chunk === null ){
@@ -39,14 +54,15 @@ imap
                 console.log( message );
                 console.log('[data]----------------------------------------');
                 console.log( data );
-                
                 // 削除
-                console.log('[delete - ' + message.UID +']-----------------');
+                console.log('[delete - ' + message.UID +']-------');
                 imap.deleteMessage( message.UID, function( err ){
                     console.log(err || "success, message deleted");
-                } )
+                } );
             })
         ;
-    } )
-;
+    });
+}).connect();
 ```
+
+- body取得の部分は、電文そのままなので別途パースが必要
