@@ -1,31 +1,33 @@
 ### 使用されているユーザ
 気になったので見てみた。
 ```bash
-# cat /var/log/secure | grep 'Failed\|Inva' | perl -le 'while(<>){chomp($_);my$u=($_=~/ user (.*?) /)[0];next unless $u;print $u;}' | sort | uniq -c | sort -k 1 -r
-    596 admin
-    328 test
-    298 oracle
-    186 PlcmSpIp
-    180 vyatta
-    160 ubnt
-    156 guest
-    146 info
-    138 support
-    134 user
-    134 bill
-    132 marketing
-    132 agata
-    130 mike
-    128 uploader
-     56 arbab
-     50 default
-     48 log
-     48 dreamer
-     48 debug
-     46 pi
-     46 karaf
-     44 xbmc
-     44 xbian
+# cat /var/log/secure | grep ' Failed\| Invalid' | perl -pe 's/^.* (for|user) (.*) from .*/$2/g' | sort | uniq -c | sort -k 1 -r
+   3105 root
+    614 admin
+    340 test
+    310 oracle
+    192 PlcmSpIp
+    186 vyatta
+    166 ubnt
+    162 guest
+    152 info
+    144 support
+    142 ftp
+    140 user
+    140 bill
+    138 marketing
+    138 agata
+    136 mike
+    134 uploader
+     62 arbab
+     56 default
+     54 log
+     54 dreamer
+     54 debug
+     52 pi
+     52 karaf
+     50 xbmc
+     50 xbian
      16 nagios
      12 office
      10 temp
@@ -61,6 +63,7 @@
       4 app
       4 anonymous
       4 accounting
+      3 mysql
       2 zxin10
       2 ziggy
       2 zhanghui
@@ -82,6 +85,7 @@
       2 user1
       2 user05
       2 tomcat7
+      2 tomcat
       2 test123
       2 test1
       2 tech
@@ -111,6 +115,7 @@
       2 password
       2 orders
       2 notice
+      2 nobody
       2 nmrsu
       2 nicole
       2 nfsnobod
@@ -201,6 +206,7 @@
       2 arnux
       2 appdev4
       2 apache2
+      2 apache
       2 antonio
       2 anna
       2 ankit
@@ -234,4 +240,9 @@
       2 123456
       2 123
       2 .php
+      1 uucp
+      1 postfix
+      1 operator
+      1 news
+      1 bin
 ```
