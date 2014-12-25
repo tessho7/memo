@@ -20,6 +20,15 @@ MemTrimRate = "0"
 isolation.tools.hgfs.notify.enable = "FALSE"
 ```
 
+- コピペ用(他の項目も追加しているけども)
+```text
+MemTrimRate = "0"
+mainMem.useNamedFile = "FALSE"
+sched.mem.pshare.enable = "FALSE"
+prefvmx.useRecommendedLockedMemSize = "TRUE"
+MemAllowAutoScaleDown = "FALSE"
+```
+
 ## CPUを複数使う場合以下を有効にする
 
 ### Intel - Intel XD Bit / Intel-VT
