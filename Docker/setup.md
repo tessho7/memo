@@ -137,8 +137,12 @@ $ docker export [IMAGE ID] > img.tar
 $ cat img.tar | docker import - REPOSITORY:TAG
 ```
 
-
-
+### Dockerfileからビルド
+```bash
+$ docker build --rm --no-cache イメージ名 .
+```
+- rm：ビルド履歴を残さない
+- no-cache：キャッシュを利用しない
 
 ## 注意
 ### ポートのバインドができない
