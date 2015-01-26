@@ -29,6 +29,11 @@ prefvmx.useRecommendedLockedMemSize = "TRUE"
 MemAllowAutoScaleDown = "FALSE"
 ```
 
+- これだけでいいような情報もあった
+```text
+mainMem.backing = "swap"
+```
+
 ## CPUを複数使う場合以下を有効にする
 
 ### Intel - Intel XD Bit / Intel-VT
