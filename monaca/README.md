@@ -13,4 +13,6 @@ monacaを使った開発で困ったことや忘れそうなことを書く
 1. MonacaApp-Info.plistを開く
 2. key＞UISupportedInterfaceOrientations、UISupportedInterfaceOrientations~ipadを探す
 3. 各対応する傾きが<array>内にあるので、必要な物のみ残す
-	UIInterfaceOrientationPortraitのみにすると、縦固定
+```text
+UIInterfaceOrientationPortraitのみにすると、縦固定
+```
