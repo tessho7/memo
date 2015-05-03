@@ -14,3 +14,8 @@ default-character-set=utf8
 [client]
 default-character-set=utf8
 ```
+
+### 確認
+```sql
+show variables like "char%";
+```
