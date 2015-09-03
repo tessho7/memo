@@ -1,0 +1,48 @@
+var memcache = require('memcache'),
+    memd = new memcache.Client( 11211, [host || 'localhost'] )
+;
+
+/***
+ * "memcache": "~0.3.0"のEND問題仮対応
+ ***/
+var crlf = "\r\n";
+var crlf_len = crlf.length;
+memd.handle_get = function(buffer) {
+    var next_result_at = 0;
+    var result_value = null;
+    var end_indicator_len = 3;
+    var result_len = 0;
+
+    if (buffer.indexOf('END' + crlf) == 0) {
+        return [result_value, end_indicator_len + crlf_len];
+    } else if (buffer.indexOf('VALUE') == 0 && buffer.indexOf(crlf + 'END' + crlf) != -1) {
+        first_line_len = buffer.indexOf(crlf) + crlf_len;
+        var end_indicator_start = buffer.lastIndexOf(crlf + 'END' + crlf);
+        result_len = end_indicator_start - first_line_len;
+        result_value = buffer.substr(first_line_len, result_len);
+        return [result_value, first_line_len + parseInt(result_len, 10) + crlf_len + end_indicator_len + crlf_len]
+    } else {
+        var first_line_len = buffer.indexOf(crlf) + crlf_len;
+        var result_len     = buffer.substr(0, first_line_len).split(' ')[3];
+        result_value       = buffer.substr(first_line_len, result_len);
+
+        return [result_value, first_line_len + parseInt(result_len ) + crlf_len + end_indicator_len + crlf_len];
+    }
+};
+
+memd.on('connect', function(){
+	// no arguments - we've connected
+	console.log( 'memd.connect', arguments );
+}).on('close', function(){
+	// no arguments - connection has been closed
+	console.log( 'memd.close', arguments );
+	setTimeout( function(){ memd.connect(); }, 1000 );
+}).on('timeout', function(){
+	// no arguments - socket timed out
+	console.log( 'memd.timeout', arguments );
+}).on('error', function( e ){
+	// there was an error - exception is 1st argument
+	console.error( 'memd.error', arguments );
+}).connect();
+
+module.exports = memd;
