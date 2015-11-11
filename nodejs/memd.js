@@ -29,6 +29,38 @@ memd.handle_get = function(buffer) {
         return [result_value, first_line_len + parseInt(result_len ) + crlf_len + end_indicator_len + crlf_len];
     }
 };
+/***
+ * 同時アクセス時に対応
+ * set等も同様の問題が有ると思われるので後々対応
+ ***/
+memd.get = function(key, callback, retry) {
+    // return this.query('get ' + key, 'get', callback);
+    var self = this;
+    if( !self.queue ){ self.queue = {}; }
+    if( !retry ){
+        if( !( key in self.queue ) ){ self.queue[ key ] = []; }
+        self.queue[ key ].push( {key:key, callback:callback} );
+    }
+    
+    if( self.queueActive ){ return; }
+    self.queueActive = key;
+    
+    self.query('get ' + self.queue[ key ][ 0 ].key, 'get', function( err, val ){
+        while( self.queue[ key ].length > 0 ){
+            var queue = self.queue[ key ].shift();
+            queue.callback( err, val );
+        }
+        self.queue[ key ].length <= 0 && delete self.queue[ key ];
+        self.queueActive = null;
+        if( Object.keys( self.queue ).length ){
+            setImmediate( function(){
+                var nextKey = Object.keys( self.queue ).shift();
+                var nextQueue = self.queue[ nextKey ][ 0 ];
+                self.get( nextKey, nextQueue.callback, true );
+            } );
+        }
+    });
+}
 
 memd.on('connect', function(){
 	// no arguments - we've connected
