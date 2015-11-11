@@ -32,6 +32,7 @@ memd.handle_get = function(buffer) {
 /***
  * 同時アクセス時に対応
  * set等も同様の問題が有ると思われるので後々対応
+ * ※やっつけ感がひどいので一応追記
  ***/
 memd.get = function(key, callback, retry) {
     // return this.query('get ' + key, 'get', callback);
