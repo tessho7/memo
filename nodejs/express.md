@@ -21,3 +21,6 @@
  //app.use(favicon(__dirname + '/public/favicon.ico'));
 ```
 あとは、layout.ejsを作成し、index.ejsのヘッダとフッターをlayout.ejsに合わせて書換え
+
+express-partialsを導入するとエラー画面にもlayout.ejsを適用するため、  
+app.jsのエラーハンドリング部分にあるres.renderに{layout:false}を追加
