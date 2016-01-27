@@ -9,11 +9,6 @@ git config --global core.quotepath false
 git config --global core.precomposeunicode true
 ```
 
-### git log で文字化け
-```bash
-git config --global core.pager "less -c | nkf -w"
-```
-
 ### commit時のエディタ設定
 ```bash
 git config --global core.editor 'vim -c "set fenc=utf-8"'
