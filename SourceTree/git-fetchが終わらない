@@ -1,0 +1,4 @@
+### 鍵関連の話なら、SourceTreeが内部で使っているPuttyで一度接続しておけば良い
+```
+"C:\Program Files (x86)\Atlassian\SourceTree\tools\putty\plink.exe" account@host
+```
