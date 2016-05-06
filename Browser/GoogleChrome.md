@@ -7,6 +7,10 @@
 - Windows`shift + delete`
 - Mac`shift + fn + delete`
 
+### リスタート
+ブックマークに以下ページを追加して選択で開いているタブはそのままにリスタート
+- `chrome://restart`
+
 ### MacTypeを有効化
 1. chrome://flags/
 2. `DirectWrite を無効にする`項目を有効にする  
