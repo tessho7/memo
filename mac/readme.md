@@ -3,6 +3,7 @@
 - 時刻に日付表示
 - finderにパスツリー表示
 - iCloudサインアウト(起動時毎回問題あると言われるため)
+- Mission Controlの設定で、Ctrl+UP、Ctrl+Downを無効化(Atomの矩形選択とかぶるため)
 
 ### インストールアプリ
 - セキュリティ系
