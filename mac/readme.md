@@ -18,6 +18,7 @@
 - IPMessenger
 - Google 日本語入力
 - Atom
+- CotEditor
 
 ### 探し中のアプリ
 - WinMergeと同等のアプリ
