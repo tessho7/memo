@@ -31,3 +31,11 @@
   }
 </style>
 ```
+## もしくはこの方がいいかな？
+```css
+<style>
+  ons-toolbar ~ .fab--top__right {
+    top: 66px;
+  }
+</style>
+```
