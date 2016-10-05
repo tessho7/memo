@@ -24,3 +24,8 @@ sudo apt-get install nodejs npm
 sudo apt-get install nodejs nodejs-legacy npm
 ```
 `nodejs-legacy`を入れ、シンボリック作成(`/usr/bin/node -> nodejs`)
+
+### npm
+```bash
+sudo npm install -g npm forever express-generator marked
+```
