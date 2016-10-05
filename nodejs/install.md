@@ -29,3 +29,8 @@ sudo apt-get install nodejs nodejs-legacy npm
 ```bash
 sudo npm install -g npm forever express-generator marked
 ```
+
+### test
+```
+node -e "require('http').createServer(function(req,res){res.end('OK')}).listen(3001)"
+```
