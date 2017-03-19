@@ -10,7 +10,13 @@ var results = ( tweetText.match( /(^|\s)+(#\S+)/g ) || [] ).reduce( function( a,
 ```
 
 ```javascript
-(tweetText.match(/(^|\s)+(#\S+)/g)||[]).map( function(el){ return el.replace(/\s/, '') } );
+var results = ( tweetText.match( /(^|\s)+(#\S+)/g ) || [] ).map( function( el ){
+  return el.replace(/\s/, '')
+} );
+```
+
+```javascript
+(tweetText.match(/(^|\s)+(#\S+)/g)||[]).map(function(el){return el.replace(/\s/, '')});
 ```
 
 うーん。。。
