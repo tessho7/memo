@@ -1,12 +1,12 @@
 ```javascript
-var results = tweetText.match( /(^|\s)+(#\S+)/g ).reduce( function( a, e ){
+var results = ( tweetText.match( /(^|\s)+(#\S+)/g ) || [] ).reduce( function( a, e ){
   a.push( e.replace(/\s/,'') );
   return a;
 }, [] );
 ```
 
 ```javascript
-tweetText.match(/(^|\s)+(#\S+)/g).reduce(function(a,e){a.push(e.replace(/\s/,''));return a;},[]);
+(tweetText.match(/(^|\s)+(#\S+)/g)||[]).reduce(function(a,e){a.push(e.replace(/\s/,''));return a;},[]);
 ```
 
 うーん。。。
