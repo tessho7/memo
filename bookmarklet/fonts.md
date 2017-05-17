@@ -25,10 +25,10 @@ javascript:(function(){document.body.style.fontFamily='none';document.body.style
 ```javascript
 ( function(){
   var s = prompt( "フォントサイズ？(px)" );
-  s = s && s.match(/^\d+$/) && s + "px";
+  s = s && isFinite( s ) && s + "px";
   document.body.style.fontSize = s;
 })()
 ```
 ```javascript
-javascript:(function(){var s=prompt("フォントサイズ？(px)");s=s&&s.match(/^\d+$/)&&s+"px";document.body.style.fontSize=s;})()
+javascript:(function(){var s=prompt("フォントサイズ？(px)");s=s&&isFinite(s)&&s+"px";document.body.style.fontSize=s;})()
 ```
