@@ -1,5 +1,5 @@
 // 作りかけ
-function huluInfo() {
+(function huluInfo() {
 	const id = 'playZero'
 	document.getElementById(id) && document.getElementById(id).remove()
 	const div = document.createElement("div")
@@ -38,4 +38,4 @@ function huluInfo() {
 	}
 	player.removeEventListener('timeupdate', display, false)
 	player.addEventListener('timeupdate', display, false)
-}
+})()
