@@ -9,10 +9,11 @@
 	div.style.right = div.style.bottom = 0
 	div.style.backgroundColor = 'rgba(128, 128, 128, 0.5)'
 	div.style.color = 'white'
+	div.style.fontSize = '10px'
 	div.style.padding = '.2em'
 	div.style.border = 'solid white 1px'
 	div.innerHTML = ''
-	
+
 	// 秒→分、秒
 	const splitSeconds = function(second){
 		return {
@@ -28,13 +29,14 @@
 			('00' + splitSeconds.sec).slice(-2)
 		].join(':')
 	}
-	
+
 	// 再生位置を表示
 	const player = document.getElementById('player_html5_api')
 	const display = function(){
 		const current = printSeconds(splitSeconds(player.currentTime))
 		const duration = printSeconds(splitSeconds(player.duration))
-		div.innerHTML = `${current} / ${duration}`
+		const percent = ((player.currentTime / player.duration) * 100).toFixed(0)
+		div.innerHTML = `${current} / ${duration}(${percent}%)`
 	}
 	player.removeEventListener('timeupdate', display, false)
 	player.addEventListener('timeupdate', display, false)
