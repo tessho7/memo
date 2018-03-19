@@ -1,35 +1,42 @@
 // 作りかけ
-(function huluInfo() {
+(function () {
+	// 定義
+	const id = 'playZero'
+	const player = document.getElementById('player_html5_api')
+	const div = document.createElement('div')
 	// 秒→分、秒
-	const splitSeconds = function(second = 0){
+	const splitSeconds = function(second = 0) {
+		if (isNaN(second)) {
+			second = 0
+		}
 		return {
 			hour: Math.floor(second / 3600),
 			min: Math.floor(second / 60) % 60,
 			sec: Math.floor((second % 60) % 60)
 		}
 	}
-	const printSeconds = function(splitSeconds){
+	const printSeconds = function(splitSeconds) {
 		return [
 			('00' + splitSeconds.hour).slice(-2),
 			('00' + splitSeconds.min).slice(-2),
 			('00' + splitSeconds.sec).slice(-2)
 		].join(':')
 	}
+	const getPercent = function(current, duration) {
+		if (isNaN(current) || isNaN(duration)) { return 0 }
+		return (current / duration * 100).toFixed(0)
+	}
 	// 再生位置を表示
-	const display = function(){
+	const display = function() {
 		const current = printSeconds(splitSeconds(player.currentTime))
 		const duration = printSeconds(splitSeconds(player.duration))
-		const percent = ((player.currentTime / player.duration) * 100).toFixed(0)
+		const percent = getPercent(player.currentTime, player.duration)
 		div.innerHTML = `${current} / ${duration}(${percent}%)`
 	}
-	// 定義
-	const id = 'playZero'
-	const player = document.getElementById('player_html5_api')
 	// 初期化
 	player.removeEventListener('timeupdate', display, false)
 	document.getElementById(id) && document.getElementById(id).remove()
 	// 描画
-	const div = document.createElement('div')
 	document.body.appendChild(div)
 	div.id = id
 	div.style.position = 'fixed'
