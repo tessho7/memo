@@ -48,3 +48,7 @@
 ```text
 --high-dpi-support=1 --force-device-scale-factor=1
 ```
+
+#### 新しく設定してみた
+- chrome://flags/#top-chrome-md
+  - Normal
